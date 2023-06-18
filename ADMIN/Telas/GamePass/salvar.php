@@ -12,7 +12,7 @@ if ($_POST) {
     $nomeJogo = trim($_POST['nomejogo']);
     $generoJogo = trim($_POST['genero']);
     $descricaoJogo = trim($_POST['descricao']);
-    $novo_nome = trim($_POST['foto_usuario']);
+    $capaJogo = trim($_POST['foto_usuario']);
     ;
 
 
@@ -23,14 +23,14 @@ if ($_POST) {
     if (empty($_FILES['foto']['size']) != 1) {
         //pegar as extensão do arquivo
         $extensao = strtolower(substr($_FILES['foto']['name'], -4));
-        if ($novo_nome == "") {
+        if ($capaJogo == "") {
             //Ciando um nome novo
-            $novo_nome = md5(time()) . $extensao;
+            $capaJogo = md5(time()) . $extensao;
         }
         //definindo o diretorio
-        $diretorio = "../../../Fotos";
+        $diretorio = "../../Fotos/";
         //juntando o nome com o diretorio
-        $nomeCompleto = $diretorio . $novo_nome;
+        $nomeCompleto = $diretorio . $capaJogo;
         //efetuando o upload
         move_uploaded_file($_FILES['foto']['tmp_name'], $nomeCompleto);
     }
@@ -41,22 +41,24 @@ if ($_POST) {
             nomeJogo = '$nomeJogo',
             generoJogo = '$generoJogo',
             descricaoJogo = '$descricaoJogo'
+            capaJogo = '$capaJogo'
         WHERE ID_jogo = $Id_jogo
         ";
     } else {
         $sql = "
-        INSERT INTO tbgamepass (nomeJogo , generoJogo , descricaoJogo ) VALUES
+        INSERT INTO tbgamepass (nomeJogo , generoJogo , descricaoJogo , capaJogo ) VALUES
         (
             '$nomeJogo',
             '$generoJogo',
-            '$descricaoJogo'
+            '$descricaoJogo',
+            '$capaJogo'
         )
         ";
     }
     $query = $conn->prepare($sql);
     $query->execute();
 }
-header('Location: ./');
+header('Location: ../altgp.php');
 exit;
 
 

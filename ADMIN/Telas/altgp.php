@@ -51,7 +51,7 @@ $contatos = $resultado->fetchAll();
                                 <th class="col-md-2">Nome do Jogo</th>
                                 <th class="col-md-2">Gênero do jogo</th>
                                 <th class="col-md-3">Descrição do jogo</th>
-                                <th class="col-md-2">Capa</th>
+                                <th class="col-md-1">Capa</th>
                                 <th class="text-center col-md-1">Alterar</th>
                                 <th class="text-center col-md-1">Excluir</th>
                             </tr>
@@ -71,8 +71,8 @@ $contatos = $resultado->fetchAll();
                                     <td>
                                         <?= $contato[3] ?>
                                     </td>
-                                    <td class="text-center">
-
+                                    <td>
+                                        <?= $contato[4] ?>
                                     </td>
                                     <td class="text-center">
                                         <i class="fas fa-edit fa-lg text-secondary"></i>
@@ -93,11 +93,11 @@ $contatos = $resultado->fetchAll();
         <div class=" modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body  ">
-                    <form action="remover.php" method="post">
+                    <form action="GamePass/remover.php" method="post">
                         <input class="form-control" id="id_depoimentoUp" name="id_depoimentoUp" type="text">
                         <p>Tem certeza que deseja excluir o item selcionado?
                         <div class=" text-end">

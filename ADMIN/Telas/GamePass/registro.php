@@ -6,7 +6,7 @@ include('../../../conexaoBanco/conexao.php');
     echo '</pre>'; */
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
-    $querySelect = "SELECT * FROM tbgamepass  WHERE ID_jogo = $id_usuario";
+    $querySelect = "SELECT * FROM tbgamepass  WHERE ID_jogo = $IdJogo";
     $resultado = $conn->query($querySelect);
     $usuario = $resultado->fetch();
 
@@ -14,14 +14,14 @@ if ($_POST) {
     $nome_jogo = $jogo["nome_jogo"];
     $generoJogo = $jogo["generoJogo"];
     $descJogo = $jogo["descJogo"];
-    $fotoJogo = $jogo["fotoJogo"];
+    $foto_usuario = $jogo["foto_usuario"];
 
 } else {
     $IdJogo = "";
     $nome_jogo = "";
     $generoJogo = "";
     $descJogo = "";
-    $fotoJogo = "";
+    $foto_usuario = "";
 }
 
 ?>

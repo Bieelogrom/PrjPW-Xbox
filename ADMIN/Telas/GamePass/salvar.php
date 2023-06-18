@@ -40,8 +40,8 @@ if ($_POST) {
         UPDATE tbgamepass SET
             nomeJogo = '$nomeJogo',
             generoJogo = '$generoJogo',
-            descricaoJogo = '$descricaoJogo'
-            capaJogo = '$capaJogo'
+            descricaoJogo = '$descricaoJogo',
+            capaJogo = '$capaJogo',
         WHERE ID_jogo = $Id_jogo
         ";
     } else {

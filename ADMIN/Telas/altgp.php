@@ -78,7 +78,9 @@ $contatos = $resultado->fetchAll();
                                         <i class="fas fa-edit fa-lg text-secondary"></i>
                                     </td>
                                     <td class="text-center">
+                                        <a class="dropdown-item" onclick="modalRemover(<?=$contato[0]?>,'id_usuarioUp')">
                                         <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                                        </a>     
                                     </td>
                                 <tr>
                                 <?php } ?>
@@ -97,9 +99,9 @@ $contatos = $resultado->fetchAll();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body  ">
-                    <form action="GamePass/remover.php" method="post">
-                        <input class="form-control" id="id_depoimentoUp" name="id_depoimentoUp" type="text">
-                        <p>Tem certeza que deseja excluir o item selcionado?
+                    <form action="GamePass/remover.php" method="POST">
+                        <input type="text" class="form-control" id="id_usuarioUp" name="id_usuarioUp" >
+                        <p>Tem certeza que deseja excluir o item selecionado?</p>
                         <div class=" text-end">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
                             <button type="submit" class="btn btn-warning ms-3">Sim </button>
@@ -110,7 +112,7 @@ $contatos = $resultado->fetchAll();
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src='../../estilos/personalizar.js'></script>
+    <script src='../../PastaCSS/personalizar.js'></script>
 
 </body>
 

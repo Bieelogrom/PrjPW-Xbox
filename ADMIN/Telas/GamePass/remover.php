@@ -1,15 +1,16 @@
 <?php
 include('../../../conexaoBanco/conexao.php');
-/* echo '<pre>';
+/*echo '<pre>';
     print_r($_POST);
     echo '</pre>'; */
     //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
+    //se colocar aspas simples na área do $_POST, o código leva pro header.
    if($_POST) {
-    $id_usuario = $_POST['id_usuarioUp'];
-    $querySelect = "DELETE  FROM tbgamepass  WHERE ID_jogo = $IdJogo";
+    $iddojogo = $_POST['id_usuarioUp'];
+    $querySelect = "DELETE  FROM tbgamepass  WHERE ID_jogo = $iddojogo";
     $resultado = $conn->query($querySelect);
   }
-  header('Location: ./');
+  header('Location: ../altgp.php');
   exit;
 
 ?>

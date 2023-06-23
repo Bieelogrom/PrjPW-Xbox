@@ -2,7 +2,7 @@
 include "../../conexaoBanco/validador_acesso.php";
 include('../../conexaoBanco/conexao.php');
 
-$querySelect = "SELECT * FROM tbusuarios";
+$querySelect = "SELECT * FROM tbmensagens";
 
 $resultado = $conn->query($querySelect);
 
@@ -30,7 +30,6 @@ $contatos = $resultado->fetchAll();
   <!-- cabeçalho -->
   <div class="container-fluid " style="height: 90%;">
     <div class="row h-100">
-      <!-- depoimento -->
       <?php include("../../componentes/menu.php") ?>
       <div class="col-md-10  p-4">
         <div class="row align-items-center mb-4">
@@ -42,6 +41,7 @@ $contatos = $resultado->fetchAll();
                 class="fas fa-plus" aria-hidden="true"></i></a>
           </div>
         </div>
+      
         <div class=" row">
           <table class="table table-hover">
             <thead>

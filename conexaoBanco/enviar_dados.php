@@ -10,7 +10,7 @@ if ($_POST) {
     $Comentario = trim($_POST['mensagem']);
 
     $sql = "
-    INSERT INTO tbusuarios (nome, email, motcont, comentario) VALUES ('$Nome', '$Email', '$MotCont','$Comentario')
+    INSERT INTO tbmensagens (nome, email, motcont, comentario) VALUES ('$Nome', '$Email', '$MotCont','$Comentario')
     ";
 
 }

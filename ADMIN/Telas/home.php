@@ -6,6 +6,11 @@ $resultado = $conn->query($querySelect);
 $jogos = $resultado->fetchAll();
 $n_jogos = count($jogos);
 
+$querySelect = "SELECT * FROM tbmensagens";
+$resultado = $conn->query($querySelect);
+$mensagem = $resultado->fetchAll();
+$n_mensagem = count($mensagem);
+
 
 ?>
 
@@ -20,6 +25,7 @@ $n_jogos = count($jogos);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../../img/logo.png" />
+    <link rel="stylesheet" href="../../PastaCSS/gradientes.css">
 </head>
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
@@ -30,13 +36,20 @@ $n_jogos = count($jogos);
         <div class="row h-100">
             <?php include("../../componentes/menu.php") ?>
             <div class="col-md-10  p-4">
-                <div class="row align-items-center mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="row align-items-center mb-4 justify-content-around">
+                    <div class="card sunset" style="width: 18rem;">
+                        <div class="card-body text-light">
+                            <h5 class="card-title ">Catálogo do Gamepass</h5>
+                            <p class="card-text fw-bold fs-4"><?=$n_jogos?></p>
+                            <a href="altgp.php" class="btn btn-primary">Verificar</a>
+                        </div>
+                    </div>
+
+                    <div class="card sunset" style="width: 18rem;">
+                        <div class="card-body text-light">
+                            <h5 class="card-title ">Mensagens</h5>
+                            <p class="card-text fw-bold fs-4"><?=$n_mensagem?></p>
+                            <a href="email.php" class="btn btn-primary">Verificar</a>
                         </div>
                     </div>
                 </div>

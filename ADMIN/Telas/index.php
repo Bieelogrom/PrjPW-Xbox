@@ -18,7 +18,7 @@
 <body class="">
 
   <nav class="navbar navbar-dark bg-black justify-content-center">
-    <img src="../../ImagensProjeto/microsoft.png" width="100" height="100" class="d-inline-block align-center"
+    <img src="../../imgs/microsoft.png" width="100" height="100" class="d-inline-block align-center"
       alt="ADMIN" style="margin-top: 30px">
 
   </nav>

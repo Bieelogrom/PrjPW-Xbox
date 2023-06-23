@@ -1,6 +1,4 @@
-<?php
-require_once "../../conexaoBanco/validador_acesso.php"
-    ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

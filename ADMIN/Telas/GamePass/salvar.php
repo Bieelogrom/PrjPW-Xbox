@@ -1,7 +1,7 @@
 <?php
-/*     echo '<pre>';
+    echo '<pre>';
     print_r($_POST);
-    echo '</pre>'; */
+    echo '</pre>'; 
 
 include('../../../conexaoBanco/conexao.php');
 
@@ -11,7 +11,7 @@ if ($_POST) {
     $Id_jogo = trim($_POST['id_usuario']);
     $nomeJogo = trim($_POST['nomejogo']);
     $generoJogo = trim($_POST['genero']);
-    $descricaoJogo = trim($_POST['descricao']);
+    $descricaoJogo = trim($_POST['descJogo']);
     $capaJogo = trim($_POST['foto_usuario']);
     ;
 
@@ -41,7 +41,7 @@ if ($_POST) {
             nomeJogo = '$nomeJogo',
             generoJogo = '$generoJogo',
             descricaoJogo = '$descricaoJogo',
-            capaJogo = '$capaJogo',
+            capaJogo = '$capaJogo'
         WHERE ID_jogo = $Id_jogo
         ";
     } else {

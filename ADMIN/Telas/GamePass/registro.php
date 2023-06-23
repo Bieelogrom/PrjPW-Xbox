@@ -1,23 +1,24 @@
 <?php
 
 include('../../../conexaoBanco/conexao.php');
-/*  echo '<pre>';
+ /* echo '<pre>';
     print_r($_POST);
     echo '</pre>'; */
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
-    $querySelect = "SELECT * FROM tbgamepass  WHERE ID_jogo = $IdJogo";
+    $id_usuario = $_POST['id_usuario'];
+    $querySelect = "SELECT * FROM tbgamepass  WHERE ID_jogo = $id_usuario";
     $resultado = $conn->query($querySelect);
-    $usuario = $resultado->fetch();
+    $jogo = $resultado->fetch();
 
-    $IdJogo = $jogo["IdJogo"];
-    $nome_jogo = $jogo["nome_jogo"];
+    $id_usuario = $jogo["ID_jogo"];
+    $nome_jogo = $jogo["nomeJogo"];
     $generoJogo = $jogo["generoJogo"];
-    $descJogo = $jogo["descJogo"];
-    $foto_usuario = $jogo["foto_usuario"];
+    $descJogo = $jogo["descricaoJogo"];
+    $foto_usuario = $jogo["capaJogo"];
 
 } else {
-    $IdJogo = "";
+    $id_usuario = "";
     $nome_jogo = "";
     $generoJogo = "";
     $descJogo = "";
@@ -61,7 +62,7 @@ if ($_POST) {
                             <div class="col-md-2   text-center">
                                 <div class="bg-white rounded">
                                     <img id="preview"
-                                        src="../../../Fotos <?= $fotoJogo != "" ? $fotoJogo : 'perfil.png'; ?>"
+                                        src="../../../Fotos<?=$foto_usuario!=""?$foto_usuario:'perfil.png'; ?>"
                                         alt="..." class=" w-75">
                                 </div>
                             </div>
@@ -88,23 +89,19 @@ if ($_POST) {
                                 <div class="row  ">
                                     <div class="col-md-9">
                                         <label for="recipient-name" class="col-form-label">Descrição:</label>
-                                        <textarea class="form-control" name="descricao" maxlength="500"
-                                            value="<?= $descJogo ?>">
-
-
-                                        </textarea>
+                                        <input class="form-control"  type="text" name="descJogo" value="<?=$descJogo?>">
                                     </div>
                                 </div>
                                 <div class="col-md-3 mt-5">
                                     <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input">
                                 </div>
-                                <input type="hidden" id="foto_usuario" name="foto_usuario" value="<?= $foto_usuario ?>">
+                                <input type="hidden" id="foto_usuario" name="foto_usuario" value="<?=$foto_usuario?>">
 
                             </div>
                             <div class=" text-end p-3">
-                                <input type="hidden" id="id_usuario" name="id_usuario" value="<?= $IdJogo ?>">
+                                <input type="hidden" id="id_usuario" name="id_usuario" value="<?= $id_usuario ?>">
                                 <a class=" btn btn-primary px-3" role="button" aria-disabled="true"
-                                    href="index.php">Voltar</i></a>
+                                    href="../altgp.php">Voltar</i></a>
                                 <input type="submit" class=" btn btn-success" value="Salvar">
                             </div>
                     </form>

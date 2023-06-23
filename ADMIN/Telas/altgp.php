@@ -1,5 +1,5 @@
 <?php
-
+include "../../conexaoBanco/validador_acesso.php";
 
 include('../../conexaoBanco/conexao.php');
 
@@ -17,11 +17,10 @@ $contatos = $resultado->fetchAll();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tela de ADM</title>
+    <title>Gamepass</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../../img/logo.png" />
 </head>
 
@@ -39,8 +38,7 @@ $contatos = $resultado->fetchAll();
                         Catálogo Gamepass
                     </div>
                     <div class="col text-end ">
-                        <a class="btn btn-success px-3" role="button" aria-disabled="true"
-                            href="GamePass/registro.php"><i class="fas fa-plus" aria-hidden="true"></i></a>
+                        <a class="btn btn-success px-3" role="button" aria-disabled="true" href="GamePass/registro.php"><i class="fas fa-plus" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class=" row">
@@ -75,12 +73,16 @@ $contatos = $resultado->fetchAll();
                                         <?= $contato[4] ?>
                                     </td>
                                     <td class="text-center">
-                                        <i class="fas fa-edit fa-lg text-secondary"></i>
+                                    <form action="GamePass/registro.php" method="POST">
+                                        <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="<?= $contato[0] ?>">
+                                        <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary"></i>
+                                        </button>
+                                    </form>
                                     </td>
                                     <td class="text-center">
-                                        <a class="dropdown-item" onclick="modalRemover(<?=$contato[0]?>,'id_usuarioUp')">
-                                        <i class="fas fa-trash-alt fa-lg text-danger"></i>
-                                        </a>     
+                                        <a class="dropdown-item" onclick="modalRemover(<?= $contato[0] ?>,'id_usuarioUp')">
+                                            <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                                        </a>
                                     </td>
                                 <tr>
                                 <?php } ?>
@@ -100,7 +102,7 @@ $contatos = $resultado->fetchAll();
                 </div>
                 <div class="modal-body  ">
                     <form action="GamePass/remover.php" method="POST">
-                        <input type="text" class="form-control" id="id_usuarioUp" name="id_usuarioUp" >
+                        <input type="hidden" class="form-control" id="id_usuarioUp" name="id_usuarioUp">
                         <p>Tem certeza que deseja excluir o item selecionado?</p>
                         <div class=" text-end">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>

@@ -1,5 +1,5 @@
 <?php
-
+include "../../conexaoBanco/validador_acesso.php";
 include('../../conexaoBanco/conexao.php');
 
 $querySelect = "SELECT * FROM tbusuarios";

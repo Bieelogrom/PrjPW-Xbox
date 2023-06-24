@@ -1,28 +1,25 @@
 <?php
 
 include('../../../conexaoBanco/conexao.php');
- /* echo '<pre>';
+/* echo '<pre>';
     print_r($_POST);
     echo '</pre>'; */
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
     $id_usuario = $_POST['id_usuario'];
-    $querySelect = "SELECT * FROM tbgamepass  WHERE ID_jogo = $id_usuario";
+    $querySelect = "SELECT * FROM tbcomunidade  WHERE ID_post = $id_usuario";
     $resultado = $conn->query($querySelect);
-    $jogo = $resultado->fetch();
+    $contato = $resultado->fetch();
 
-    $id_usuario = $jogo["ID_jogo"];
-    $nome_jogo = $jogo["nomeJogo"];
-    $generoJogo = $jogo["generoJogo"];
-    $descJogo = $jogo["descricaoJogo"];
-    $foto_usuario = $jogo["capaJogo"];
-
+    $id_usuario = $contato["ID_post"];
+    $nome_post = $contato["nomePost"];
+    $tipoDePost = $contato["tipoPost"];
+    $descDoPost = $contato["descPost"];
 } else {
     $id_usuario = "";
-    $nome_jogo = "";
-    $generoJogo = "";
-    $descJogo = "";
-    $foto_usuario = "";
+    $nome_post = "";
+    $tipoDePost = "";
+    $descDoPost = "";
 }
 
 ?>
@@ -38,8 +35,7 @@ if ($_POST) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../../img/logo.png" />
 </head>
 
@@ -56,32 +52,22 @@ if ($_POST) {
                 <div class="card">
                     <form method="post" action="salvar.php" enctype="multipart/form-data">
                         <div class="card-header">
-                            <strong>INFORMAÇÕES DO JOGO</strong>
+                            <strong>INFORMAÇÕES DO DEPOIMENTO</strong>
                         </div>
                         <div class="card-body row " style="align-items: center; justify-content: center;">
-                            <div class="col-md-2   text-center">
-                                <div class="bg-white rounded">
-                                    <img id="preview"
-                                        src="../../../Fotos<?=$foto_usuario!=""?$foto_usuario:'perfil.png'; ?>"
-                                        alt="..." class=" w-75">
-                                </div>
-                            </div>
                             <div class=" col-md-10">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="recipient-name" class="col-form-label">Nome do jogo:</label>
-                                        <input type="text" class="form-control" name="nomejogo" maxlength="50"
-                                            value="<?= $nome_jogo ?>">
+                                        <label for="recipient-name" class="col-form-label">Nome do usuário:</label>
+                                        <input type="text" class="form-control" name="nomePost" maxlength="50" value="<?= $nome_post ?>">
                                     </div>
                                     <div class="col-md-3 mb-3">
-                                        <label for="recipient-name" class="col-form-label">Gênero:</label>
-                                        <select class="form-control" name="genero">
-                                            <option value="Ação">Ação</option>
-                                            <option value="Aventura">Aventura</option>
-                                            <option value="Terror">Terror</option>
-                                            <option value="RPG">RPG</option>
-                                            <option value="Corrida">Corrida</option>
-                                            <option value="Simulação">Simulação</option>
+                                        <label for="recipient-name" class="col-form-label">Tipo de depoimento:</label>
+                                        <select name="motivodocontato" class="form-control">
+                                            <option value="Comentário para comunidade" selected>Comentário</option>
+                                            <option value="Sugestão de jogo">Sugestão de jogo</option>
+                                            <option value="Reclamações">Reclamações</option>
+                                            <option value="Elogios">Elogios</option>
                                         </select>
                                     </div>
 
@@ -89,19 +75,13 @@ if ($_POST) {
                                 <div class="row  ">
                                     <div class="col-md-9">
                                         <label for="recipient-name" class="col-form-label">Descrição:</label>
-                                        <input class="form-control"  type="text" name="descJogo" value="<?=$descJogo?>">
+                                        <input class="form-control" type="text" name="descPost" value="<?= $descDoPost ?>">
                                     </div>
                                 </div>
-                                <div class="col-md-3 mt-5">
-                                    <input type="file" id="foto" name="foto" accept="image/*" class="custom-file-input">
-                                </div>
-                                <input type="hidden" id="foto_usuario" name="foto_usuario" value="<?=$foto_usuario?>">
-
                             </div>
                             <div class=" text-end p-3">
                                 <input type="hidden" id="id_usuario" name="id_usuario" value="<?= $id_usuario ?>">
-                                <a class=" btn btn-primary px-3" role="button" aria-disabled="true"
-                                    href="../altgp.php">Voltar</i></a>
+                                <a class=" btn btn-primary px-3" role="button" aria-disabled="true" href="../altcom.php">Voltar</i></a>
                                 <input type="submit" class=" btn btn-success" value="Salvar">
                             </div>
                     </form>

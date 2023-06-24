@@ -3,7 +3,7 @@
   <div class="text-center p-3 fw-bold" style="background-color: #f8f9fa;">
     © Desenvolvido por Gabriel Ferreira Amorim:
     <a class="text-dark" href="https://www.linkedin.com/in/gabriel-ferreira-amorim-659841227/" target="_blank">Meu
-      Linkedin</a>
+      Linkedin</a> <a class="text-dark" href="../../ADMIN/Telas/index.php">/ LoginADM</a>
   </div>
   <!-- Copyright -->
 </footer>

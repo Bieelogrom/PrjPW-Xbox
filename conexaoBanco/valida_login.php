@@ -29,9 +29,9 @@ if ($usuario_autenticado) {
 
 
 include("conexao.php");
-echo '<pre>';
+/*echo '<pre>';
 print_r($_POST);
-echo '</pre>';
+echo '</pre>';*/
 
 $email_usuario = $_POST['email'];
 $senha_usuario = $_POST['senha'];

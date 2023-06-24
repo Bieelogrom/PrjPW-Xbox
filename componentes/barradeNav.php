@@ -17,9 +17,6 @@
         <li class="nav-item">
           <a class="nav-link fw-bold" href="Suporte.php">Contato</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link fw-bold" href="Login.php">Login</a>
-        </li>
       </ul>
     </div>
   </div>

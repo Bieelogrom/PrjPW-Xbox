@@ -26,7 +26,7 @@
 
         <div class="d-flex justify-content-center">
 
-          <form action="../conexaoBanco/enviar_dados.php" method="POST">
+          <form action="../../conexaoBanco/enviar_dados.php" method="POST">
             <!-- Name input -->
             <div class="form-outline mb-4">
               <input type="text" name="nome" id="form4Example1" class="form-control" />
@@ -57,7 +57,7 @@
 
             <!-- Submit button -->
             <div class="d-flex justify-content-center"> <button type="submit"
-                class="btn btn-success btn-block mb-4 text-center" value="enviar_dados">Enviar</button></div>
+                class="btn btn-success btn-block mb-4 text-center" value="Submit">Enviar</button></div>
 
           </form>
 

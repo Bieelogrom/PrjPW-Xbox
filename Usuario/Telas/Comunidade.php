@@ -1,3 +1,14 @@
+<?php 
+
+include('../../conexaoBanco/conexao.php');
+
+$querySelect = "SELECT * FROM tbcomunidade";
+$resultado = $conn->query($querySelect);
+$contatos = $resultado->fetchAll();
+
+?>
+
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -18,14 +29,16 @@
   </header>
 
 
-  <main>
+  <main class="d-flex flex-wrap mx-auto p-4 grid gap-3">
+  <?php foreach ($contatos as $contato ) { ?>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Nome</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Motivo de contato</h6>
-        <p class="card-text">comentário</p>
+        <h5 class="card-title"><?= $contato[1]?></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><?= $contato[2]?></h6>
+        <p class="card-text"><?= $contato[3]?></p>
       </div>
     </div>
+    <?php } ?>
   </main>
 
 

@@ -10,7 +10,7 @@ if ($_POST) {
     $Comentario = trim($_POST['mensagem']);
 
     $sql = "
-    INSERT INTO tbmensagens (nome, email, motcont, comentario) VALUES ('$Nome', '$Email', '$MotCont','$Comentario')
+    INSERT INTO tbusuarios (nome, email, motcont, comentario) VALUES ('$Nome', '$Email', '$MotCont','$Comentario')
     ";
 
 }
@@ -19,7 +19,7 @@ $query = $conn->prepare($sql);
 $query->execute();
 
 
-header('Location: ../Telas/Suporte.php');
+header('Location: ../Usuario/Telas/Login.php');
 
 
 ?>

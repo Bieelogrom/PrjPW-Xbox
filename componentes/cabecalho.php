@@ -17,7 +17,7 @@ if(isset($_SESSION['foto_usuario'])) {
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="home.php" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-        <img src="../imgs/Xbox.png" width="60" height="60" class="d-inline-block align-top" alt="Xbox">
+        <img src="https://i.pinimg.com/564x/e7/8f/75/e78f7564fec91ba2ae1340fb42e50114.jpg" alt="clipart xbox logo hd @transparentpng.com" width="60" height="60" class="d-inline-block align-top" alt="Xbox">
       </a>
       <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ms-3 fw-bold">
       </div>
@@ -28,8 +28,8 @@ if(isset($_SESSION['foto_usuario'])) {
         </a>
         <ul class="dropdown-menu text-small">
           <li>
-            <form action="../ADMIN/Telas/GamePass/registro.php" method="post">
-              <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="<?=$_SESSION['id_usuario']?>">
+            <form action="" method="post">
+              <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="<?=$_SESSION['ID_conta']?>">
               <button type="submit" class="dropdown-item">Perfil</button>
             </form>
           </li>

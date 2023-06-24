@@ -2,7 +2,7 @@
 include "../../conexaoBanco/validador_acesso.php";
 include('../../conexaoBanco/conexao.php');
 
-$querySelect = "SELECT * FROM tbmensagens";
+$querySelect = "SELECT * FROM tbusuarios";
 
 $resultado = $conn->query($querySelect);
 
@@ -19,8 +19,7 @@ $contatos = $resultado->fetchAll();
   <title>Tela de ADM</title>
   <link rel="stylesheet" href="css/estilo.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="../../img/logo.png" />
 </head>
 
@@ -36,12 +35,8 @@ $contatos = $resultado->fetchAll();
           <div class="col fs-3 fw-semibold">
             Lista de E-mails
           </div>
-          <div class="col text-end ">
-            <a class="btn btn-success px-3" role="button" aria-disabled="true" href="registro.php"><i
-                class="fas fa-plus" aria-hidden="true"></i></a>
-          </div>
         </div>
-      
+
         <div class=" row">
           <table class="table table-hover">
             <thead>
@@ -51,7 +46,6 @@ $contatos = $resultado->fetchAll();
                 <th class="col-md-3">E-mail</th>
                 <th class="col-md-2">Motivo de contato</th>
                 <th class="col-md-3">Mensagem</th>
-                <th class="text-center col-md-1">Alterar</th>
                 <th class="text-center col-md-1">Excluir</th>
               </tr>
             </thead>
@@ -74,12 +68,9 @@ $contatos = $resultado->fetchAll();
                     <?= $contato[4] ?>
                   </td>
                   <td class="text-center">
-                    <i class="fas fa-edit fa-lg text-secondary"></i>
-
-
-                  </td>
-                  <td class="text-center">
-                    <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                    <a class="dropdown-item" onclick="modalRemover(<?= $contato[0] ?>,'id_apagarItem')">
+                      <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </a>
                   </td>
                 <tr>
                 <?php } ?>
@@ -98,9 +89,9 @@ $contatos = $resultado->fetchAll();
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body  ">
-          <form action="remover.php" method="post">
-            <input class="form-control" id="id_depoimentoUp" name="id_depoimentoUp" type="hidden">
-            <p>Tem certeza que deseja excluir o item selcionado?
+          <form action="email/remover.php" method="post">
+            <input class="form-control" id="id_apagarItem" name="id_apagarItem" type="hidden">
+            <p>Tem certeza que deseja excluir o item selecionado?
             <div class=" text-end">
               <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
               <button type="submit" class="btn btn-warning ms-3">Sim </button>
@@ -111,7 +102,7 @@ $contatos = $resultado->fetchAll();
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src='../estilos/personalizar.js'></script>
+    <script src='../../PastaCSS/personalizar.js'></script>
 
 </body>
 

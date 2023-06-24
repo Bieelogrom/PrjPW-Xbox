@@ -1,3 +1,14 @@
+<?php 
+
+include('../../conexaoBanco/conexao.php');
+
+$querySelect = "SELECT * FROM tbgamepass";
+$resultado = $conn->query($querySelect);
+$jogos = $resultado->fetchAll();
+
+?>
+
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -9,6 +20,7 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../../PastaCSS/gradientes.css">
   <link rel="stylesheet" href="../../PastaCSS/configsEAfins.css">
+  
 </head>
 
 <body class="midnight-city">
@@ -18,35 +30,17 @@
   </header>
 
 
-  <main class="d-flex justify-content-around flex-wrap">
-    <div class="card card_configs" style="width: 25rem;">
-      <img src="https://www.dummyimage.com/600x400/000/fff" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
+  <main class="d-flex flex-wrap mx-auto p-4 grid gap-3 ">
+  <?php foreach ($jogos as $jogo) { ?>
     </div>
     <div class="card card_configs" style="width: 25rem;">
-      <img src="https://www.dummyimage.com/600x400/000/fff" class="card-img-top" alt="...">
+      <img src="../../ADMIN/Fotos/<?= $jogo[4] ?>" width="500"  height="500" class="card-img-top" alt="...">
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+        <p class="fw-bold fs-4"><?= $jogo[1] ?></p>
+        <p class="card-text"><?= $jogo[3] ?></p>
       </div>
     </div>
-    <div class="card card_configs" style="width: 25rem;">
-      <img src="https://www.dummyimage.com/600x400/000/fff" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
-    <div class="card card_configs" style="width: 25rem;">
-      <img src="https://www.dummyimage.com/600x400/000/fff" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-      </div>
-    </div>
+    <?php } ?>
 
   </main>
 

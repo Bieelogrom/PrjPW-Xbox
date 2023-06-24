@@ -30,11 +30,11 @@ $jogos = $resultado->fetchAll();
   </header>
 
 
-  <main class="d-flex flex-wrap mx-auto p-4 grid gap-3 ">
+  <main class="d-flex flex-wrap mx-auto p-4 grid gap-3 flex-grow-1">
   <?php foreach ($jogos as $jogo) { ?>
     </div>
-    <div class="card card_configs" style="width: 25rem;">
-      <img src="../../ADMIN/Fotos/<?= $jogo[4] ?>" width="500"  height="500" class="card-img-top" alt="...">
+    <div class="card card_configs" style="width: 20rem;">
+      <img src="../../ADMIN/Fotos/<?= $jogo[4] ?>" width="300"  height="300" class="card-img-top" alt="...">
       <div class="card-body">
         <p class="fw-bold fs-4"><?= $jogo[1] ?></p>
         <p class="card-text"><?= $jogo[3] ?></p>
@@ -45,9 +45,6 @@ $jogos = $resultado->fetchAll();
   </main>
 
 
-  <footer>
-    <?php include "../../componentes/footer.php" ?>
-  </footer>
 
 
 

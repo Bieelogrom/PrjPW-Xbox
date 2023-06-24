@@ -17,7 +17,7 @@ $contatos = $resultado->fetchAll();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gamepass</title>
+    <title>Comunidade</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -35,7 +35,7 @@ $contatos = $resultado->fetchAll();
             <div class="col-md-10  p-4">
                 <div class="row align-items-center mb-4">
                     <div class="col fs-3 fw-semibold">
-                        Depoimentos da comunidade
+                        Atualizações da comunidade
                     </div>
                     <div class="col text-end ">
                         <a class="btn btn-success px-3" role="button" aria-disabled="true" href="comunidade/registrar.php"><i class="fas fa-plus" aria-hidden="true"></i></a>
@@ -46,10 +46,9 @@ $contatos = $resultado->fetchAll();
                         <thead>
                             <tr>
                                 <th class="col-md-1">ID_depoimento</th>
-                                <th class="col-md-2">Nome usuário</th>
+                                <th class="col-md-2">Título</th>
                                 <th class="col-md-2">Tipo de depoimento</th>
                                 <th class="col-md-3">Descrição do depoimento</th>
-                                <th class="text-center col-md-1">Aprovar</th>
                                 <th class="text-center col-md-1">Excluir</th>
                             </tr>
                         </thead>
@@ -67,13 +66,6 @@ $contatos = $resultado->fetchAll();
                                     </td>
                                     <td>
                                         <?= $contato[3] ?>
-                                    </td>
-                                    <td class="text-center">
-                                    <form action="comunidade/salvar.php" method="POST">
-                                        <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="<?= $contato[0] ?>">
-                                        <button type="submit" class="dropdown-item"><i class="bi bi-check-circle-fill"></i>
-                                        </button>
-                                    </form>
                                     </td>
                                     <td class="text-center">
                                         <a class="dropdown-item" onclick="modalRemover(<?= $contato[0] ?>,'id_usuarioUp')">

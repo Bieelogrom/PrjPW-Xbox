@@ -19,7 +19,7 @@ $query = $conn->prepare($sql);
 $query->execute();
 
 
-header('Location: ../Usuario/Telas/Login.php');
+header('Location: ../Usuario/Telas/');
 
 
 ?>

@@ -58,16 +58,16 @@ if ($_POST) {
                             <div class=" col-md-10">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="recipient-name" class="col-form-label">Nome do usuário:</label>
+                                        <label for="recipient-name" class="col-form-label">Título:</label>
                                         <input type="text" class="form-control" name="nomePost" maxlength="50" value="<?= $nome_post ?>">
                                     </div>
                                     <div class="col-md-3 mb-3">
-                                        <label for="recipient-name" class="col-form-label">Tipo de depoimento:</label>
+                                        <label for="recipient-name" class="col-form-label">Tipo de atualização:</label>
                                         <select name="motivodocontato" class="form-control">
                                             <option value="Comentário para comunidade" selected>Comentário</option>
-                                            <option value="Sugestão de jogo">Sugestão de jogo</option>
-                                            <option value="Reclamações">Reclamações</option>
-                                            <option value="Elogios">Elogios</option>
+                                            <option value="Novidade">Novidade</option>
+                                            <option value="Eventos">Eventos</option>
+                                            <option value="Informações">Informações</option>
                                         </select>
                                     </div>
 

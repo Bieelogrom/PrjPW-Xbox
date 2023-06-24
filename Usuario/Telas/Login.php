@@ -31,10 +31,6 @@
 
 
 
-    <footer>
-        <?php include "../../componentes/footer.php" ?>
-    </footer>
-
 
 
 

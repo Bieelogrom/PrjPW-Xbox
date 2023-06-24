@@ -1,6 +1,3 @@
-
-
-
 <?php
 include "../../conexaoBanco/validador_acesso.php";
 include "../../conexaoBanco/conexao.php";
@@ -13,6 +10,11 @@ $querySelect = "SELECT * FROM tbusuarios";
 $resultado = $conn->query($querySelect);
 $mensagem = $resultado->fetchAll();
 $n_mensagem = count($mensagem);
+
+$querySelect = "SELECT * FROM tbcomunidade";
+$resultado = $conn->query($querySelect);
+$post = $resultado->fetchAll();
+$n_post = count($post);
 
 
 ?>
@@ -40,31 +42,38 @@ $n_mensagem = count($mensagem);
             <?php include("../../componentes/menu.php") ?>
             <div class="col-md-10  p-4">
                 <div class="row align-items-center mb-4">
-               
-                <div class="row align-items-center mb-4 justify-content-around">
-                    <div class="card between-the-cloud" style="width: 18rem;">
-                        <div class="card-body text-light">
-                            <h5 class="card-title ">Catálogo do Gamepass</h5>
-                            <p class="card-text fw-bold fs-4"><?=$n_jogos?></p>
-                            <a href="altgp.php" class="btn btn-primary">Verificar</a>
-                        </div>
-                    </div>
 
-                    <div class="card between-the-cloud" style="width: 18rem;">
-                        <div class="card-body text-light">
-                            <h5 class="card-title ">E-mails</h5>
-                            <p class="card-text fw-bold fs-4"><?=$n_mensagem?></p>
-                            <a href="email.php" class="btn btn-primary">Verificar</a>
+                    <div class="row align-items-center mb-4 justify-content-around">
+                        <div class="card" style="width: 18rem; background-color: #cf262d">
+                            <div class="card-body text-light">
+                                <h5 class="card-title ">Catálogo do Gamepass</h5>
+                                <p class="card-text fw-bold fs-4"><?= $n_jogos ?></p>
+                                <a href="altgp.php" class="btn fw-bold" style="background-color: #f6cc5c; color: white;">Verificar</a>
+                            </div>
                         </div>
 
+                        <div class="card" style="width: 18rem; background-color: #cf262d">
+                            <div class="card-body text-light">
+                                <h5 class="card-title ">E-mails</h5>
+                                <p class="card-text fw-bold fs-4"><?= $n_mensagem ?></p>
+                                <a href="email.php" class="btn fw-bold" style="background-color: #f6cc5c; color: white;">Verificar</a>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18rem; background-color: #cf262d">
+                            <div class="card-body text-light">
+                                <h5 class="card-title ">Posts</h5>
+                                <p class="card-text fw-bold fs-4"><?= $n_post ?></p>
+                                <a href="altcom.php" class="btn fw-bold " style="background-color: #f6cc5c; color: white;">Verificar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src='../../PastaCSS/personalizar.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src='../../PastaCSS/personalizar.js'></script>
 
 </body>
 

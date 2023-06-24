@@ -60,6 +60,10 @@ Attributions:
     background: linear-gradient(to left, #2C3E50, #FD746C);
 }
 
+.btn-primary{
+    background-color: #f6cc5c;
+}
+
 .grapefruit-sunset {
     background: #e96443;
     background: -webkit-linear-gradient(to left, #e96443, #904e95);

@@ -17,12 +17,19 @@ if ($_POST) {
 
     if (is_numeric($Id_POST)) {
         $sql = "
-        INSERT INTO tbcomunidade (nomePost , tipoPost , descPost ) VALUES
+        UPDATE tbcomunidade SET
+            nomePost = '$nomePost',
+            tipoPost = '$tipoDoPost',
+            descPost = '$descricaoPost',
+        WHERE Id_post = $Id_POST
+        ";
+    } else {
+        $sql = "
+        INSERT INTO tbcomunidade (nomePost , tipoPost , descPost) VALUES
         (
             '$nomePost',
             '$tipoDoPost',
             '$descricaoPost'
-
         )
         ";
     }

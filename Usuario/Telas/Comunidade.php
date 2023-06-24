@@ -29,7 +29,7 @@ $contatos = $resultado->fetchAll();
   </header>
 
 
-  <main class="d-flex flex-wrap mx-auto p-4 grid gap-3">
+  <main class="d-flex flex-wrap mx-auto p-4 grid gap-3 flex-grow-1">
   <?php foreach ($contatos as $contato ) { ?>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -42,9 +42,7 @@ $contatos = $resultado->fetchAll();
   </main>
 
 
-  <footer>
-    <?php include "../../componentes/footer.php" ?>
-  </footer>
+
 
 
 

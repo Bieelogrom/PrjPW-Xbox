@@ -34,7 +34,102 @@ $n_post = count($post);
 
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
-    <?php include "../../componentes/cabecalho.php" ?>
+<style>
+
+
+
+
+
+
+.geeks::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.geeks:hover::before {
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: #f6cc5c;
+        border-right-color: #f6cc5c;
+        border-bottom-color:  #f6cc5c;
+        border-left-color:  #f6cc5c;
+    }
+
+    50% {
+        width: 100%;
+        height: 0;
+        border-top-color: #f6cc5c;
+        border-right-color: #f6cc5c;
+        border-bottom-color:  #f6cc5c;
+        border-left-color:  #f6cc5c;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: #f6cc5c;
+        border-right-color: #f6cc5c;
+        border-bottom-color:  #f6cc5c;
+        border-left-color:  #f6cc5c;
+    }
+}
+
+.geeks::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.geeks:hover::after {
+    animation: animates 1s linear forwards;
+}
+
+@keyframes animates {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: #f6cc5c;
+        border-right-color: #f6cc5c;
+        border-bottom-color:  #f6cc5c;
+        border-left-color:  #f6cc5c;
+    }
+
+    50% {
+        width: 0;
+        height: 100%;
+        border-top-color: #f6cc5c;
+        border-right-color: #f6cc5c;
+        border-bottom-color:  #f6cc5c;
+        border-left-color:  #f6cc5c;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: #f6cc5c;
+        border-right-color: #f6cc5c;
+        border-bottom-color:  #f6cc5c;
+        border-left-color:  #f6cc5c;
+    }
+}
+</style>
+<?php include("cabecalho.php") ?>
 
 
     <div class="container-fluid " style="height: 90%;">
@@ -44,15 +139,15 @@ $n_post = count($post);
                 <div class="row align-items-center mb-4">
 
                     <div class="row align-items-center mb-4 justify-content-around">
-                        <div class="card" style="width: 18rem; background-color: #cf262d">
-                            <div class="card-body text-light">
+                        <div class="card geeks" style="width: 18rem; background-color: #cf262d">
+                            <div class="card-body text-light ">
                                 <h5 class="card-title ">Catálogo do Gamepass</h5>
                                 <p class="card-text fw-bold fs-4"><?= $n_jogos ?></p>
                                 <a href="altgp.php" class="btn fw-bold" style="background-color: #f6cc5c; color: white;">Verificar</a>
                             </div>
                         </div>
 
-                        <div class="card" style="width: 18rem; background-color: #cf262d">
+                        <div class="card geeks" style="width: 18rem; background-color: #cf262d">
                             <div class="card-body text-light">
                                 <h5 class="card-title ">E-mails</h5>
                                 <p class="card-text fw-bold fs-4"><?= $n_mensagem ?></p>
@@ -60,7 +155,7 @@ $n_post = count($post);
                             </div>
                         </div>
 
-                        <div class="card" style="width: 18rem; background-color: #cf262d">
+                        <div class="card geeks" style="width: 18rem; background-color: #cf262d">
                             <div class="card-body text-light">
                                 <h5 class="card-title ">Posts</h5>
                                 <p class="card-text fw-bold fs-4"><?= $n_post ?></p>

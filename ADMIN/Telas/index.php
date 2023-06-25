@@ -47,9 +47,11 @@
               </div>
               <div class="form-group">
                 <input type="password" name="senha" class="form-control" placeholder="Senha">
-              </div>
+              </div >
+              <div class="form-group">
               <button class="btn btn-lg btn-info btn-block neon-life" type="submit">Entrar</button>
             </form>
+            <a href="../../Usuario/Telas/" class="btn btn-lg btn-danger btn-block ">Sair</a>
           </div>
         </div>
       </div>

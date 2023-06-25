@@ -3,11 +3,11 @@ include "../../conexaoBanco/validador_acesso.php";
 
 include('../../conexaoBanco/conexao.php');
 
-$querySelect = "SELECT * FROM tbgamepass";
+$querySelect = "SELECT * FROM tbpublicidade";
 
 $resultado = $conn->query($querySelect);
 
-$contatos = $resultado->fetchAll();
+$publicidade = $resultado->fetchAll();
 
 
 ?>
@@ -17,7 +17,7 @@ $contatos = $resultado->fetchAll();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gamepass</title>
+    <title>Publicidade</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -26,7 +26,7 @@ $contatos = $resultado->fetchAll();
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
 
-    <?php include("../../componentes/cabecalho.php") ?>
+    <?php include("cabecalho.php") ?>
     <!-- cabeçalho -->
     <div class="container-fluid " style="height: 90%;">
         <div class="row h-100">
@@ -35,56 +35,43 @@ $contatos = $resultado->fetchAll();
             <div class="col-md-10  p-4">
                 <div class="row align-items-center mb-4">
                     <div class="col fs-3 fw-semibold">
-                       
-                    </div>
-                    <div class="col text-end ">
-                        <a class="btn btn-success px-3" role="button" aria-disabled="true" href="GamePass/registro.php"><i class="fas fa-plus" aria-hidden="true"></i></a>
+                       Alterar Publicidade
                     </div>
                 </div>
                 <div class=" row">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="col-md-1">ID_Jogo</th>
-                                <th class="col-md-2">Nome do Jogo</th>
-                                <th class="col-md-2">Gênero do jogo</th>
-                                <th class="col-md-3">Descrição do jogo</th>
-                                <th class="col-md-1">Capa</th>
+                                <th class="col-md-1">Publicidade</th>
+                                <th class="col-md-1">Imagem-1</th>
+                                <th class="col-md-1">Imagem-2</th>
+                                <th class="col-md-1">Imagem-3</th>
                                 <th class="text-center col-md-1">Alterar</th>
-                                <th class="text-center col-md-1">Excluir</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($contatos as $contato) { ?>
+                            <?php foreach ($publicidade as $pbulicidade) { ?>
                                 <tr>
                                     <td>
-                                        <?= $contato[0] ?>
+                                        <?= $pbulicidade[0] ?>
                                     </td>
                                     <td>
-                                        <?= $contato[1] ?>
+                                        <?= $pbulicidade[1] ?>
                                     </td>
                                     <td>
-                                        <?= $contato[2] ?>
+                                        <?= $pbulicidade[2] ?>
                                     </td>
                                     <td>
-                                        <?= $contato[3] ?>
-                                    </td>
-                                    <td>
-                                        <?= $contato[4] ?>
+                                        <?= $pbulicidade[3] ?>
                                     </td>
                                     <td class="text-center">
-                                    <form action="GamePass/registro.php" method="POST">
-                                        <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="<?= $contato[0] ?>">
+                                    <form action="publicidade/registrar.php" method="POST">
+                                        <input type="hidden" class="form-control" id="id_usuario" name="id_usuario" value="<?= $pbulicidade[0] ?>">
                                         <button type="submit" class="dropdown-item"><i class="fas fa-edit fa-lg text-secondary"></i>
                                         </button>
                                     </form>
                                     </td>
-                                    <td class="text-center">
-                                        <a class="dropdown-item" onclick="modalRemover(<?= $contato[0] ?>,'id_usuarioUp')">
-                                            <i class="fas fa-trash-alt fa-lg text-danger"></i>
-                                        </a>
-                                    </td>
-                                <tr>
+                                </tr>
                                 <?php } ?>
                         </tbody>
                     </table>

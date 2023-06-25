@@ -26,7 +26,7 @@ $contatos = $resultado->fetchAll();
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
 
-    <?php include("../../componentes/cabecalho.php") ?>
+<?php include("cabecalho.php") ?>
     <!-- cabeçalho -->
     <div class="container-fluid " style="height: 90%;">
         <div class="row h-100">

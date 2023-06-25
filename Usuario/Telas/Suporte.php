@@ -32,7 +32,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <!-- <label for="name">Name</label> --> <input class="form-control" type="text" placeholder="Nome" name="nome">
+                      <!-- <label for="name">Name</label> --> <input class="form-control" type="text" placeholder="Nome" name="nome" style="margin-bottom: 10px">
                     </div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <div class="input-group">
-                        <select name="motivodocontato" id="" class="form-control">
+                        <select name="motivodocontato" id="" class="form-control" style="margin-bottom: 10px">
                           <option value="Sugestão de jogo">Sugestão de jogo</option>
                           <option value="Sugestão de jogo">Reclamação</option>
                           <option value="Sugestão de jogo">Pergunta</option>
@@ -54,7 +54,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <div class="input-group"> <input class="form-control" type="text" placeholder="Email" name="email"> </div>
+                      <div class="input-group"> <input class="form-control" type="text" placeholder="Email" name="email" style="margin-bottom: 10px"> </div>
                     </div>
                   </div>
                 </div>
@@ -63,7 +63,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <div class="input-group">
-                        <textarea name="mensagem" id="" cols="30" rows="5" class="form-control" placeholder="mensagem"></textarea>
+                        <textarea name="mensagem" id="" cols="30" rows="5" class="form-control" placeholder="Mensagem"></textarea>
                       </div>
                     </div>
                   </div>

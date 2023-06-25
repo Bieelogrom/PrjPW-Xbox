@@ -6,6 +6,10 @@ unset($_SESSION['senha']);
 session_destroy();
 header('Location: login.php')*/
 
+$querySelect = "SELECT * FROM tbcontas";
+$resultado = $conn->query($querySelect);
+$conta = $resultado->fetchAll();
+
 
 if(isset($_SESSION['foto_usuario'])) {
   $foto_usuario = $_SESSION['$foto_usuario'];
@@ -28,8 +32,7 @@ if(isset($_SESSION['foto_usuario'])) {
       <div class="dropdown text-end">
         <a href="../" class="d-block text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
           aria-expanded="false">
-          <img src="../ADMIN/Fotos/<?=$_SESSION['$foto_usuario']!="" ? $_SESSION['$foto_usuario'] : 'perfil.png';?>"
-            alt="mdo" width="32" height="32" class="rounded-circle">
+          <img src="Fotos/<?= $conta[4] ?>"  alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
         <ul class="dropdown-menu text-small">
           <li>
@@ -41,7 +44,7 @@ if(isset($_SESSION['foto_usuario'])) {
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item" href="../conexaoBanco/logoff.php">Sign out</a></li>
+          <li><a class="dropdown-item" href="logoff.php">Deslogar</a></li>
         </ul>
       </div>
     </div>

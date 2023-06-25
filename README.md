@@ -1,4 +1,4 @@
-# PrjPW-Xbo
+# PrjPW-Xbox
 
 [Projeto para matéria de Programação Web 2 na Etec de Guaianazes.]
 [Aulas sediadas pelo professor Luciano.]

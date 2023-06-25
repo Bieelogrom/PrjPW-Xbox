@@ -31,6 +31,8 @@ if ($_POST) {
 <html lang="pt-br">
 
 <head>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Escola Virtual - Registro</title>
@@ -45,7 +47,7 @@ if ($_POST) {
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
     <?php
-    include('../../../Componentes/cabecalho.php');
+    include('../cabecalho.php');
     ?>
     <div class="container-fluid " style="height: 90%;">
         <div class="row h-100">

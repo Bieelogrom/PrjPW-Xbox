@@ -41,7 +41,7 @@ if ($_POST) {
 
 <body style="justify-content: center; align-items: center; height: 100vh ">
     <?php
-    include('../../../Componentes/cabecalho.php');
+    include('../cabecalho.php');
     ?>
     <div class="container-fluid " style="height: 90%;">
         <div class="row h-100">

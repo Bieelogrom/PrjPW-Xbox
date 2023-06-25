@@ -89,7 +89,7 @@ $contatos = $resultado->fetchAll();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body  ">
-                    <form action="GamePass/remover.php" method="POST">
+                    <form action="comunidade/remover.php" method="POST">
                         <input type="hidden" class="form-control" id="id_usuarioUp" name="id_usuarioUp">
                         <p>Tem certeza que deseja excluir o item selecionado?</p>
                         <div class=" text-end">

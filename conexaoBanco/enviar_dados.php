@@ -19,7 +19,7 @@ $query = $conn->prepare($sql);
 $query->execute();
 
 
-header('Location: ../Usuario/Telas/');
+header('Location: ../Usuario/Telas/Suporte.php');
 
 
 ?>

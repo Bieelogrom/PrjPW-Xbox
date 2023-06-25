@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script>
+    window.onload = function() {
+      var button = document.getElementById("meuBotao");
+      button.addEventListener("click", function() {
+        alert("Mensagem enviada!");
+      });
+    };
+  </script>
 </head>
 
 <body class="midnight-city">
@@ -69,7 +78,7 @@
                   </div>
                   <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">Acessar ADM</small> <a href="../../ADMIN/Telas/" class="terms">LoginADM</a> </div> 
                   
-                  <input type="submit" class="btn btn-primary btn-block confirm-button"></input> 
+                  <input type="submit" class="btn btn-primary btn-block confirm-button" id="meuBotao"></input> 
                 </div>
       </form>
       </div>
